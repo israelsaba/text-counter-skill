@@ -9,11 +9,12 @@ timestamp: 2026-08-19T00:00:00-03:00
 # Agent Counter: An AI Agent Skill for Exact Text Counts
 
 ```text
- _            _                           _                  _    _ _ _
-| |_ _____  _| |_    ___ ___  _   _ _ __ | |_ ___ _ __   ___| | _(_)| | |
-| __/ _ \\ \\/ / __|  / __/ _ \\| | | | '_ \\| __/ _ \\ '__| / __| |/ / | | |
-| ||  __/>  <| |_  | (_| (_) | |_| | | | | ||  __/ |    \\__ \\   <| | | |
- \\__\\___/_/\\_\\\\__|  \\___\\___/ \\__,_|_| |_|\\__\\___|_|    |___/_|\\_\\_|_|_|
+  _            _                           _                  _    _ _ _
+ | |          | |                         | |                | |  (_) | |
+ | |_ _____  _| |_    ___ ___  _   _ _ __ | |_ ___ _ __   ___| | ___| | |
+ | __/ _ \ \/ / __|  / __/ _ \| | | | '_ \| __/ _ \ '__| / __| |/ / | | |
+ | ||  __/>  <| |_  | (_| (_) | |_| | | | | ||  __/ |    \__ \   <| | | |
+  \__\___/_/\_\\__|  \___\___/ \__,_|_| |_|\__\___|_|    |___/_|\_\_|_|_|
 
 
 ```
@@ -79,17 +80,17 @@ Language models are good at drafting but unreliable at exact limits. A response 
 
 The default definitions are deliberately practical:
 
-| Metric | Definition |
-| --- | --- |
-| Characters | Unicode code points, including spaces and punctuation |
-| Characters without whitespace | Code points after Unicode whitespace is removed |
-| Graphemes | User-perceived characters, useful for emoji and combined accents |
-| Words | Word-like tokens from `Intl.Segmenter`, with a whitespace fallback |
-| Phrases | Exact, overlapping occurrences of a supplied phrase |
-| Sentences | Automated units split around sentence-ending punctuation |
-| Paragraphs | Blocks separated by one or more blank lines |
-| Lines | Newline-delimited records, including a final non-empty record |
-| UTF-8 bytes | Encoded storage or transport size |
+| Metric                        | Definition                                                         |
+| ----------------------------- | ------------------------------------------------------------------ |
+| Characters                    | Unicode code points, including spaces and punctuation              |
+| Characters without whitespace | Code points after Unicode whitespace is removed                    |
+| Graphemes                     | User-perceived characters, useful for emoji and combined accents   |
+| Words                         | Word-like tokens from `Intl.Segmenter`, with a whitespace fallback |
+| Phrases                       | Exact, overlapping occurrences of a supplied phrase                |
+| Sentences                     | Automated units split around sentence-ending punctuation           |
+| Paragraphs                    | Blocks separated by one or more blank lines                        |
+| Lines                         | Newline-delimited records, including a final non-empty record      |
+| UTF-8 bytes                   | Encoded storage or transport size                                  |
 
 If a platform uses a different limit, name that rule. For example, an SMS provider may count Unicode differently from a social network, and a search result may be truncated by rendered pixels rather than characters.
 
@@ -246,12 +247,12 @@ If an agent cannot run the installer, use its file manager or GitHub download fu
 4. Confirm the folder contains an uppercase `SKILL.md`.
 5. Start a new agent session.
 
-| Agent | User directory | Project directory |
-| --- | --- | --- |
-| OpenCode | `~/.config/opencode/skills/agent-counter` | `.opencode/skills/agent-counter` |
-| Hermes | `~/.hermes/skills/agent-counter` | Not applicable |
-| Claude Code | `~/.claude/skills/agent-counter` | `.claude/skills/agent-counter` |
-| Codex | `~/.codex/skills/agent-counter` | `.agents/skills/agent-counter` |
+| Agent       | User directory                            | Project directory                |
+| ----------- | ----------------------------------------- | -------------------------------- |
+| OpenCode    | `~/.config/opencode/skills/agent-counter` | `.opencode/skills/agent-counter` |
+| Hermes      | `~/.hermes/skills/agent-counter`          | Not applicable                   |
+| Claude Code | `~/.claude/skills/agent-counter`          | `.claude/skills/agent-counter`   |
+| Codex       | `~/.codex/skills/agent-counter`           | `.agents/skills/agent-counter`   |
 
 On Windows, `~` means `%USERPROFILE%`. In PowerShell, use `$env:USERPROFILE` when you need the full path.
 
@@ -311,15 +312,15 @@ The package includes installation paths for OpenCode, Hermes, Claude Code, and C
 
 This README uses current public documentation and comparable counter-tool pages as evidence for installation paths and discoverability patterns. Search-result snippets were used only to locate the pages; the linked pages are the sources to review.
 
-| Source | Observable evidence | Use in this README |
-| --- | --- | --- |
-| [OpenCode skills documentation](https://opencode.ai/docs/skills/) | Global and project `SKILL.md` locations, required frontmatter, restart/discovery guidance | OpenCode paths and troubleshooting |
-| [Hermes skills documentation](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills) | `~/.hermes/skills/`, GitHub and direct URL installation, new-session behavior | Hermes paths and public install |
-| [WordCounter character counter](https://wordcounter.net/character-count) | Paste-or-type workflow, immediate character and word counts | Plain-language value proposition |
-| [CharacterCounter](https://charactercounter.com/) | Characters, words, spaces, letters, sentences, paragraphs, and pages | Metric coverage and use cases |
-| [CharacterCounter meta description tool](https://charactercounter.com/meta-description) | Meta title, description, URL, character/pixel counts, and search preview | SEO use case and pixel-count caveat |
-| [WordCounter word counter](https://charactercounter.com/word-counter) | Words per sentence, syllables, unique words, pages, and character count | Related text-statistics positioning |
-| [OpenAI Codex CLI installation](https://developers.openai.com/codex/cli/installation) | Public installation and CLI context for Codex | Codex audience and troubleshooting boundary |
+| Source                                                                                               | Observable evidence                                                                       | Use in this README                          |
+| ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------- | ------------------------------------------- |
+| [OpenCode skills documentation](https://opencode.ai/docs/skills/)                                    | Global and project `SKILL.md` locations, required frontmatter, restart/discovery guidance | OpenCode paths and troubleshooting          |
+| [Hermes skills documentation](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills) | `~/.hermes/skills/`, GitHub and direct URL installation, new-session behavior             | Hermes paths and public install             |
+| [WordCounter character counter](https://wordcounter.net/character-count)                             | Paste-or-type workflow, immediate character and word counts                               | Plain-language value proposition            |
+| [CharacterCounter](https://charactercounter.com/)                                                    | Characters, words, spaces, letters, sentences, paragraphs, and pages                      | Metric coverage and use cases               |
+| [CharacterCounter meta description tool](https://charactercounter.com/meta-description)              | Meta title, description, URL, character/pixel counts, and search preview                  | SEO use case and pixel-count caveat         |
+| [WordCounter word counter](https://charactercounter.com/word-counter)                                | Words per sentence, syllables, unique words, pages, and character count                   | Related text-statistics positioning         |
+| [OpenAI Codex CLI installation](https://developers.openai.com/codex/cli/installation)                | Public installation and CLI context for Codex                                             | Codex audience and troubleshooting boundary |
 
 ## Scope And Caveats
 
