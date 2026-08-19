@@ -45,6 +45,10 @@ The installed result is a directory containing `SKILL.md`:
 
 If you only want the command-line helper, skip the agent installation and use the CLI section below.
 
+## Safe Permissions
+
+The skill can count text locally without network, browser, credential, or elevated permissions. Allow read access only to the text the user names. Allow writes only when the user asks to save a revised draft or report. Keep shell execution limited to the bundled Node command and do not grant broad filesystem access for a character count.
+
 ## Security Model
 
 This repository is an agent skill first. `SKILL.md` is instruction content that an agent will read and may use to decide what actions to take. Review the skill and installer before installing it, especially when using a fork, a downloaded ZIP, or a source you do not control. Do not pipe an unreviewed URL into a shell, and do not install skills into an agent with more filesystem or network access than the task requires.
