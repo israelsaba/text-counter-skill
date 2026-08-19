@@ -40,6 +40,12 @@ The installed result is a directory containing `SKILL.md`:
 
 If you only want the command-line helper, skip the agent installation and use the CLI section below.
 
+## Security Model
+
+This repository is an agent skill first. `SKILL.md` is instruction content that an agent will read and may use to decide what actions to take. Review the skill and installer before installing it, especially when using a fork, a downloaded ZIP, or a source you do not control. Do not pipe an unreviewed URL into a shell, and do not install skills into an agent with more filesystem or network access than the task requires.
+
+For repeatable installs, use a reviewed tag or commit instead of an unpinned branch. After cloning, record the revision with `git rev-parse HEAD` and review changes before running the installer. The included installers copy local files only; they do not download or execute remote code.
+
 ## Optional CLI Helper
 
 The CLI is bundled so the installed skill can perform reproducible local counts. It is useful by itself, but installing the CLI alone does not install the agent skill.
@@ -191,13 +197,13 @@ After this repository is public, a Hermes installation can use the public source
 hermes skills install israelsaba/agent-counter/skills/agent-counter
 ```
 
-Or install the single Markdown entry point from the raw URL when the CLI version supports direct URLs:
+If the CLI version supports direct URLs, a raw URL can install only the Markdown entry point:
 
 ```text
 hermes skills install https://raw.githubusercontent.com/israelsaba/agent-counter/main/skills/agent-counter/SKILL.md
 ```
 
-The GitHub directory form is preferred because it preserves the bundled command. Start a new Hermes session after installing. Use `/agent-counter` or ask Hermes to use the skill.
+Review the raw file before installing it. The GitHub directory form is preferred because it preserves the bundled command. Use a reviewed commit or tag when the Hermes CLI supports a ref. Start a new Hermes session after installing. Use `/agent-counter` or ask Hermes to use the skill.
 
 ### Claude Code: beginner install
 
@@ -270,40 +276,11 @@ Sentence counting is punctuation-based and intentionally approximate. For abbrev
 
 ### Windows script is blocked
 
-Open PowerShell in the repository and run `powershell -ExecutionPolicy Bypass -File .\install.ps1 -Agent codex` if local policy permits it. Alternatively copy the skill directory manually. The counter itself runs with `node`, not PowerShell.
+If the file was downloaded, right-click it and choose Properties, then select Unblock if that option is present. In PowerShell, run `Unblock-File .\install.ps1` and then `.\install.ps1 -Agent codex` if local policy permits it. Do not weaken execution policy just to run the installer. Alternatively copy the skill directory manually. The counter itself runs with `node`, not PowerShell.
 
 ### Hermes installed only `SKILL.md`
 
 Use the GitHub directory installer or clone the repository and run `./install.sh --agent hermes`. A raw single-file installation may not include the optional CLI support file.
-
-## Installation Simulation
-
-The repository includes a deterministic smoke test for the counter and installer. Simulate all four Unix-compatible paths without touching real agent directories:
-
-```bash
-tmp_dir="$(mktemp -d)"
-for agent in opencode hermes claude codex; do
-  ./install.sh --agent "$agent" --dest "$tmp_dir"
-  test -f "$tmp_dir/$agent/SKILL.md"
-done
-node test/counter.test.js
-rm -rf "$tmp_dir"
-```
-
-On Windows, run the equivalent PowerShell simulation:
-
-```powershell
-$tmp = Join-Path $env:TEMP "agent-counter-test"
-Remove-Item $tmp -Recurse -Force -ErrorAction SilentlyContinue
-.\install.ps1 -Agent all -Dest $tmp
-foreach ($agent in 'opencode', 'hermes', 'claude', 'codex') {
-  if (!(Test-Path (Join-Path $tmp "$agent\SKILL.md"))) { throw "Missing $agent" }
-}
-node .\test\counter.test.js
-Remove-Item $tmp -Recurse -Force
-```
-
-The tested installer contract is that each destination contains `SKILL.md`. A real agent still needs a fresh session to discover a newly copied skill. The PowerShell path should be run on Windows or a PowerShell Core environment; a macOS or Linux shell cannot prove Windows path behavior.
 
 ## FAQ
 

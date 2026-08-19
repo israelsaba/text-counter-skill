@@ -8,6 +8,10 @@ $ErrorActionPreference = 'Stop'
 $Root = Split-Path -Parent $MyInvocation.MyCommand.Path
 $Source = Join-Path $Root 'skills\agent-counter'
 
+if (!(Test-Path (Join-Path $Source 'SKILL.md') -PathType Leaf)) {
+  throw "Skill source is missing: $(Join-Path $Source 'SKILL.md')"
+}
+
 function Install-One([string]$Name) {
   if ($Dest) {
     $Target = Join-Path $Dest $Name

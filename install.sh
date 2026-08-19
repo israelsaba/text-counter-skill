@@ -15,8 +15,13 @@ while [ "$#" -gt 0 ]; do
   esac
 done
 
-root="$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)"
+root="$(CDPATH='' cd -- "$(dirname -- "$0")" && pwd)"
 skill_source="$root/skills/agent-counter"
+
+if [ ! -f "$skill_source/SKILL.md" ]; then
+  printf 'Skill source is missing: %s\n' "$skill_source/SKILL.md" >&2
+  exit 1
+fi
 
 install_one() {
   name="$1"
