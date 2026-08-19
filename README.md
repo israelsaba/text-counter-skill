@@ -9,8 +9,14 @@ timestamp: 2026-08-19T00:00:00-03:00
 # Agent Counter: An AI Agent Skill for Exact Text Counts
 
 ```text
-⣎⣱ ⡎⠑ ⣏⡉ ⡷⣸ ⢹⠁   ⡎⠑ ⡎⢱ ⡇⢸ ⡷⣸ ⢹⠁ ⣏⡉ ⣏⡱
-⠇⠸ ⠣⠝ ⠧⠤ ⠇⠹ ⠸    ⠣⠔ ⠣⠜ ⠣⠜ ⠇⠹ ⠸  ⠧⠤ ⠇⠱
+ _               _                               _                     _     _  _  _
+| |             | |                             | |                   | |   (_)| || |
+| |_  ___ __  __| |_    ___  ___   _   _  _ __  | |_  ___  _ __   ___ | | __ _ | || |
+| __|/ _ \\ \\/ /| __|  / __|/ _ \\ | | | || '_ \\ | __|/ _ \\| '__| / __|| |/ /| || || |
+| |_|  __/ >  < | |_  | (__| (_) || |_| || | | || |_|  __/| |    \\__ \\|   < | || || |
+ \\__|\\___|/_/\\_\\ \\__|  \\___|\\___/  \\__,_||_| |_| \\__|\\___||_|    |___/|_|\\_\\|_||_||_|
+
+
 ```
 
 Agent Counter is primarily an installable Agent Skills package for AI agents. Install the skill into OpenCode, Hermes, Claude Code, or Codex so the agent can apply consistent counting rules while writing and reviewing text. A small Node.js CLI is included as the skill's local counting helper, not as the main product.
