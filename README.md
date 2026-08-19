@@ -9,12 +9,9 @@ timestamp: 2026-08-19T00:00:00-03:00
 # Agent Counter: Character, Word, Line, and Text Counter
 
 ```text
- _   ____  ____  _  _  _____  ____   ____ ___  _   _ _   _ _____ _____ ____
-/ \ |  _ \|  _ \| || || ____|/ ___| / ___/ _ \| | | | \ | | ____| ____|  _ \
-|_|_| | |_) | |_) | || ||  _|  \___ \| |  | | | | | | |  \| |  _| |  _| | |_) |
-| | | |  __/|  __/| || || |___  ___) | |__| |_| | |_| | |\  | |___| |___|  _ <
-|_| |_|_|   |_|   |_|/ |_||_____|____/ \____\___/ \___/|_| \_|_____|_____|_| \_\
-                         a g e n t - c o u n t e r
++------------------------------------------------+
+|                 agent-counter                  |
++------------------------------------------------+
 ```
 
 Agent Counter is a portable skill and command-line tool for exact text counts. It counts characters, words, phrases, sentences, paragraphs, lines, graphemes, non-whitespace characters, and UTF-8 bytes. It helps an AI agent check a limit instead of guessing.
