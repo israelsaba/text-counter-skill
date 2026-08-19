@@ -54,12 +54,6 @@ The CLI is bundled so the installed skill can perform reproducible local counts.
 node bin/agent-counter.js --text 'Paste text here'
 ```
 
-## Repository Description
-
-This 350-character description is intended for GitHub, package indexes, and skill directories:
-
-> Agent Counter is a free, portable text counter skill and CLI for AI agents, writers, developers, and SEO teams. Count characters, words, phrases, sentences, paragraphs, lines, graphemes, whitespace, and UTF-8 bytes on macOS, Linux, or Windows. Install it in OpenCode, Hermes, Claude Code, or Codex. It stays local and private for every workflow, too.
-
 ## What It Is
 
 Agent Counter is an Agent Skills-compatible Markdown skill with a small Node.js CLI. The skill tells an agent which counting definition to use. The CLI makes the result reproducible in a shell, script, CI job, or editor workflow.
