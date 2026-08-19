@@ -22,8 +22,8 @@ The skill covers characters, words, phrases, sentences, paragraphs, lines, graph
 This repository is meant to be installed as a skill directory. On macOS or Linux, clone it and choose the agent you use:
 
 ```bash
-git clone --depth 1 https://github.com/israelsaba/agent-counter.git
-cd agent-counter
+git clone --depth 1 https://github.com/israelsaba/text-counter-skill.git
+cd text-counter-skill
 ./install.sh --agent opencode
 ```
 
@@ -151,16 +151,16 @@ The skill itself is Markdown and can be copied by a file manager. Node.js 18 or 
 macOS and Linux:
 
 ```bash
-git clone --depth 1 https://github.com/israelsaba/agent-counter.git
-cd agent-counter
+git clone --depth 1 https://github.com/israelsaba/text-counter-skill.git
+cd text-counter-skill
 ./install.sh --agent all
 ```
 
 Windows PowerShell:
 
 ```powershell
-git clone --depth 1 https://github.com/israelsaba/agent-counter.git
-Set-Location agent-counter
+git clone --depth 1 https://github.com/israelsaba/text-counter-skill.git
+Set-Location text-counter-skill
 .\install.ps1 -Agent all
 ```
 
@@ -194,13 +194,13 @@ Hermes stores skills in `~/.hermes/skills/` and supports direct GitHub skill pat
 After this repository is public, a Hermes installation can use the public source directly:
 
 ```text
-hermes skills install israelsaba/agent-counter/skills/agent-counter
+hermes skills install israelsaba/text-counter-skill/skills/agent-counter
 ```
 
 If the CLI version supports direct URLs, a raw URL can install only the Markdown entry point:
 
 ```text
-hermes skills install https://raw.githubusercontent.com/israelsaba/agent-counter/main/skills/agent-counter/SKILL.md
+hermes skills install https://raw.githubusercontent.com/israelsaba/text-counter-skill/main/skills/agent-counter/SKILL.md
 ```
 
 Review the raw file before installing it. The GitHub directory form is preferred because it preserves the bundled command. Use a reviewed commit or tag when the Hermes CLI supports a ref. Start a new Hermes session after installing. Use `/agent-counter` or ask Hermes to use the skill.
