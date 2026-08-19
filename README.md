@@ -2,7 +2,7 @@
 type: knowledge_bundle_index
 title: Agent Counter
 description: A portable text-counting skill and dependency-free CLI for AI agents, writers, developers, and SEO workflows.
-tags: [okf, agent-skill, character-counter, word-counter, seo, aeo]
+tags: [agent-skill, character-counter, word-counter]
 timestamp: 2026-08-19T00:00:00-03:00
 ---
 
