@@ -16,7 +16,6 @@ timestamp: 2026-08-19T00:00:00-03:00
  | ||  __/>  <| |_  | (_| (_) | |_| | | | | ||  __/ |    \__ \   <| | | |
   \__\___/_/\_\\__|  \___\___/ \__,_|_| |_|\__\___|_|    |___/_|\_\_|_|_|
 
-
 ```
 
 Agent Counter is primarily an installable Agent Skills package for AI agents. Install the skill into OpenCode, Hermes, Claude Code, or Codex so the agent can apply consistent counting rules while writing and reviewing text. A small Node.js CLI is included as the skill's local counting helper, not as the main product.
