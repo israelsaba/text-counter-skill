@@ -1,0 +1,38 @@
+{
+  "name": "agent-counter",
+  "version": "1.0.0",
+  "description": "Portable text counter skill for AI agents and the command line",
+  "keywords": [
+    "character-counter",
+    "word-counter",
+    "text-counter",
+    "sentence-counter",
+    "paragraph-counter",
+    "line-counter",
+    "seo",
+    "agent-skills",
+    "opencode",
+    "hermes",
+    "claude-code",
+    "codex"
+  ],
+  "license": "MIT",
+  "bin": {
+    "agent-counter": "bin/agent-counter.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "bin",
+    "skills",
+    "install.sh",
+    "install.ps1",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "check": "node --check bin/agent-counter.js",
+    "test": "node test/counter.test.js"
+  }
+}
