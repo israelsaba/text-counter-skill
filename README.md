@@ -308,6 +308,16 @@ Yes, as a local SEO writing aid for counting title tags, meta descriptions, URLs
 
 The package includes installation paths for OpenCode, Hermes, Claude Code, and Codex. It uses the portable `SKILL.md` format and a Node.js CLI.
 
+## Contributing
+
+Contributions are welcome through pull requests. Keep changes focused, preserve the `SKILL.md` entry point, add tests when counting behavior changes, and describe the checks performed. Documentation fixes and clearer examples are welcome. Discuss larger changes in an issue before opening a PR.
+
+Use issues for reproducible bugs, unclear guidance, installation problems, compatibility reports, and focused proposals. Include the skill version or commit, agent and version, operating system, expected behavior, actual behavior, and a minimal example when relevant. Include the Node version when the CLI is involved. Do not report security vulnerabilities, secrets, or private data in public issues; follow [SECURITY.md](SECURITY.md).
+
+## Releases
+
+Stable releases use `vMAJOR.MINOR.PATCH` tags and GitHub release notes. Install a reviewed release or commit when reproducibility matters.
+
 ## Evidence And Sources
 
 This README uses current public documentation and comparable counter-tool pages as evidence for installation paths and discoverability patterns. Search-result snippets were used only to locate the pages; the linked pages are the sources to review.
