@@ -6,16 +6,43 @@ tags: [okf, agent-skill, character-counter, word-counter, seo, aeo]
 timestamp: 2026-08-19T00:00:00-03:00
 ---
 
-# Agent Counter: Character, Word, Line, and Text Counter
+# Agent Counter: An AI Agent Skill for Exact Text Counts
 
 ```text
 ⣎⣱ ⡎⠑ ⣏⡉ ⡷⣸ ⢹⠁   ⡎⠑ ⡎⢱ ⡇⢸ ⡷⣸ ⢹⠁ ⣏⡉ ⣏⡱
 ⠇⠸ ⠣⠝ ⠧⠤ ⠇⠹ ⠸    ⠣⠔ ⠣⠜ ⠣⠜ ⠇⠹ ⠸  ⠧⠤ ⠇⠱
 ```
 
-Agent Counter is a portable skill and command-line tool for exact text counts. It counts characters, words, phrases, sentences, paragraphs, lines, graphemes, non-whitespace characters, and UTF-8 bytes. It helps an AI agent check a limit instead of guessing.
+Agent Counter is primarily an installable Agent Skills package for AI agents. Install the skill into OpenCode, Hermes, Claude Code, or Codex so the agent can apply consistent counting rules while writing and reviewing text. A small Node.js CLI is included as the skill's local counting helper, not as the main product.
 
-**Try it now:**
+The skill covers characters, words, phrases, sentences, paragraphs, lines, graphemes, non-whitespace characters, and UTF-8 bytes. It helps an AI agent check a limit instead of guessing.
+
+## Start Here: Install the Agent Skill
+
+This repository is meant to be installed as a skill directory. On macOS or Linux, clone it and choose the agent you use:
+
+```bash
+git clone --depth 1 https://github.com/israelsaba/agent-counter.git
+cd agent-counter
+./install.sh --agent opencode
+```
+
+Replace `opencode` with `hermes`, `claude`, or `codex`. To install the skill for all four agents, use `./install.sh --agent all`. On Windows, run `.\install.ps1` from PowerShell with the matching `-Agent` value. Start a new agent session after installation.
+
+The installed result is a directory containing `SKILL.md`:
+
+```text
+~/.config/opencode/skills/agent-counter/SKILL.md
+~/.hermes/skills/agent-counter/SKILL.md
+~/.claude/skills/agent-counter/SKILL.md
+~/.codex/skills/agent-counter/SKILL.md
+```
+
+If you only want the command-line helper, skip the agent installation and use the CLI section below.
+
+## Optional CLI Helper
+
+The CLI is bundled so the installed skill can perform reproducible local counts. It is useful by itself, but installing the CLI alone does not install the agent skill.
 
 ```bash
 node bin/agent-counter.js --text 'Paste text here'
@@ -109,11 +136,11 @@ Count words, sentences, paragraphs, lines, and reading material without sending 
 
 Use `--file` for Markdown, source code, logs, prompts, and fixtures. Use UTF-8 bytes when an API, database field, or protocol has a byte limit.
 
-## Installation
+## Detailed Skill Installation
 
-Requirements: Node.js 18 or newer. The skill itself is Markdown; Node is needed for the bundled counter command.
+The skill itself is Markdown and can be copied by a file manager. Node.js 18 or newer is only needed for the bundled counter command.
 
-### Fastest: clone and install
+### Install for every supported agent
 
 macOS and Linux:
 
@@ -121,7 +148,6 @@ macOS and Linux:
 git clone --depth 1 https://github.com/israelsaba/agent-counter.git
 cd agent-counter
 ./install.sh --agent all
-node bin/agent-counter.js --text 'installation check'
 ```
 
 Windows PowerShell:
@@ -130,7 +156,6 @@ Windows PowerShell:
 git clone --depth 1 https://github.com/israelsaba/agent-counter.git
 Set-Location agent-counter
 .\install.ps1 -Agent all
-node .\bin\agent-counter.js --text 'installation check'
 ```
 
 Install only one agent with `--agent opencode`, `--agent hermes`, `--agent claude`, or `--agent codex`. The scripts copy `skills/agent-counter/` and do not modify application code.
